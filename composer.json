@@ -1,0 +1,25 @@
+{
+	"name": "pronamic/pronamic-pay-default-payment-methods",
+	"description": "Default payment methods for the Pronamic Pay plugin for WordPress.",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"Pronamic\\PronamicPayDefaultPaymentMethods\\": "psr-4/"
+		}
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"automattic/jetpack-autoloader": true
+		}
+	},
+	"require": {
+		"php": ">=8.0",
+		"pronamic/wp-pay-logos": "^2.0",
+		"wp-pay/core": "^4.0"
+	},
+	"require-dev": {
+		"roots/wordpress-no-content": "^6.9"
+	}
+}
