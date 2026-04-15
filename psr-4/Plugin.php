@@ -5,6 +5,8 @@
  * @package Pronamic\PronamicPayDefaultPaymentMethods
  */
 
+declare(strict_types=1);
+
 namespace Pronamic\PronamicPayDefaultPaymentMethods;
 
 use Pronamic\WordPress\Pay\Core\PaymentMethod;
@@ -13,7 +15,7 @@ use Pronamic\WordPress\Pay\Core\PaymentMethodsCollection;
 /**
  * Plugin class
  */
-class Plugin {
+final class Plugin {
 	/**
 	 * Instance.
 	 *
@@ -46,6 +48,7 @@ class Plugin {
 	 *
 	 * @param PaymentMethodsCollection $payment_methods Payment methods collection.
 	 * @return void
+	 * @throws \RuntimeException If a payment method file does not return a PaymentMethod instance.
 	 */
 	private function register_payment_methods( PaymentMethodsCollection $payment_methods ): void {
 		$files = \glob( __DIR__ . '/../payment-methods/*.php' );
@@ -61,8 +64,8 @@ class Plugin {
 				throw new \RuntimeException(
 					\sprintf(
 						'Expected file %s to return a PaymentMethod instance, got %s.',
-						$file,
-						\get_debug_type( $payment_method )
+						\esc_html( $file ),
+						\esc_html( \get_debug_type( $payment_method ) )
 					)
 				);
 			}

@@ -11,7 +11,8 @@
 	"config": {
 		"sort-packages": true,
 		"allow-plugins": {
-			"automattic/jetpack-autoloader": true
+			"automattic/jetpack-autoloader": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
 	"require": {
@@ -20,6 +21,8 @@
 		"wp-pay/core": "^4.0"
 	},
 	"require-dev": {
+		"pronamic/wp-coding-standards": "^2.5",
+		"rector/rector": "^2.3",
 		"roots/wordpress-no-content": "^6.9"
 	}
 }

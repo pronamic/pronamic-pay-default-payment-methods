@@ -1,4 +1,11 @@
 <?php
+/**
+ * Payment method.
+ *
+ * @package Pronamic\PronamicPayDefaultPaymentMethods
+ */
+
+declare(strict_types=1);
 
 $image_service = new \Pronamic\WpPayLogos\ImageService();
 

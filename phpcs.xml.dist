@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<ruleset name="Pronamic Pay Default Payment Methods">
+	<file>.</file>
+
+	<exclude-pattern type="relative">^node_modules/*</exclude-pattern>
+	<exclude-pattern type="relative">^vendor/*</exclude-pattern>
+
+	<rule ref="PronamicWP">
+
+	</rule>
+</ruleset>
